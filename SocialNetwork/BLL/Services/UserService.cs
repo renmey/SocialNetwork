@@ -15,12 +15,18 @@ namespace SocialNetwork.BLL.Services
         IUserRepository userRepository;
         IFriendRepository friendRepository;
 
+
+
         public UserService()
         {
             userRepository = new UserRepository();
             friendRepository = new FriendRepository();
             messageService = new MessageService();
         }
+
+        
+
+
 
         public void Register(UserRegistrationData userRegistrationData)
         {
@@ -111,7 +117,9 @@ namespace SocialNetwork.BLL.Services
 
         public void AddFriend(UserAddingFriendData userAddingFriendData)
         {
+            
             var findUserEntity = userRepository.FindByEmail(userAddingFriendData.FriendEmail);
+
             if (findUserEntity is null) throw new UserNotFoundException();
 
             var friendEntity = new FriendEntity()

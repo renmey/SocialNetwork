@@ -48,6 +48,12 @@ namespace SocialNetwork.PLL.Views
                             break;
                         }
 
+                    case "3":
+                        {
+                            Program.addFriendView.Show(user);  
+                            break;
+                        }
+
                     case "4":
                         {
                             Program.messageSendingView.Show(user);
